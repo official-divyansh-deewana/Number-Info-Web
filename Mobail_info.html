@@ -1,14 +1,4 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mobail info</title>
-    <style></style>
-</head>
-<body>
-    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -40,23 +30,25 @@
 html,body{height:100%;-webkit-tap-highlight-color:transparent}
 body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
 
-/* BG GRID */
+/* BG GRID (Visible in both themes) */
 .bgg{position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
   background-size:26px 26px;
   mask-image:radial-gradient(ellipse 85% 90% at 50% 40%,#000 30%,transparent 100%);
   -webkit-mask-image:radial-gradient(ellipse 85% 90% at 50% 40%,#000 30%,transparent 100%)}
-.lm .bgg{background-image:linear-gradient(rgba(0,0,0,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px)}
+.lm .bgg{background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px)}
 
-/* BG CIRCLES (outlined like screenshots) */
+/* BG CIRCLES (Animates in both themes) */
 .bgc{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.bc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.055);animation:fdrift var(--d,22s) ease-in-out infinite alternate}
+.bc{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.07);animation:fdrift var(--d,22s) ease-in-out infinite alternate}
+.lm .bc{border:1px solid rgba(0,0,0,.07)}
 .bc1{width:130px;height:130px;top:18%;left:-4%;--d:22s}
 .bc2{width:185px;height:185px;top:28%;right:-6%;--d:26s;animation-delay:-5s}
 .bc3{width:75px;height:75px;top:55%;left:12%;--d:20s;animation-delay:-9s}
 .bc4{width:145px;height:145px;top:68%;right:4%;--d:24s;animation-delay:-13s}
 .bc5{width:58px;height:58px;top:78%;right:30%;--d:19s;animation-delay:-7s}
-.bdot{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.07)}
+.bdot{position:absolute;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.1)}
+.lm .bdot{background:rgba(0,0,0,.1)}
 @keyframes fdrift{0%{transform:translateY(0) translateX(0)}50%{transform:translateY(-22px) translateX(10px)}100%{transform:translateY(-40px) translateX(-7px)}}
 
 /* ANIMATIONS */
@@ -111,7 +103,7 @@ input::placeholder{color:var(--tx3)}
 .ib:hover{color:var(--c1)}
 .fh{font-size:11px;color:var(--tx3);margin-top:5px;padding-left:2px}
 
-/* LOOKUP BTN — white like screenshots */
+/* LOOKUP BTN */
 .blk{width:100%;height:57px;border:none;border-radius:15px;background:#ffffff;color:#0a0d18;font-family:'Poppins',sans-serif;font-size:14.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;position:relative;overflow:hidden;transition:var(--tr);margin-top:6px}
 .blk:hover:not(:disabled){background:#f2f6ff;box-shadow:0 6px 24px rgba(255,255,255,.14);transform:translateY(-1px)}
 .blk:active:not(:disabled){transform:translateY(0)}
@@ -153,16 +145,13 @@ input::placeholder{color:var(--tx3)}
 .tst.er{background:rgba(36,7,13,.94);color:#ff4d6a;border:1px solid rgba(255,77,106,.26)}
 .tst.rm{animation:tOut .28s ease forwards}
 
-/* EMPTY STATE — large watermark icon behind */
+/* EMPTY STATE */
 .empty{position:relative;min-height:390px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:36px 20px;overflow:hidden}
 .ewm{position:absolute;font-size:185px;color:rgba(255,255,255,.035);transform:rotate(-12deg) translateX(-10px);pointer-events:none;z-index:0;top:50%;left:50%;translate:-50% -50%}
 .lm .ewm{color:rgba(0,0,0,.04)}
 .eiw{position:relative;z-index:1;width:66px;height:66px;border-radius:18px;background:var(--card);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.65rem;color:var(--tx3)}
 .empty h3{font-size:1.2rem;font-weight:800;color:var(--tx);margin-bottom:7px;position:relative;z-index:1}
 .empty p{font-size:12px;color:var(--tx3);line-height:1.65;margin-bottom:22px;position:relative;z-index:1;max-width:270px}
-.bwh{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;border-radius:13px;background:#fff;color:#0a0d18;font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700;border:none;cursor:pointer;position:relative;z-index:1;transition:var(--tr)}
-.bwh:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,255,255,.16)}
-.lm .bwh{background:#0a0d18;color:#fff}
 
 /* TAB FOOTER */
 .tf{padding:24px 14px 14px;text-align:center;border-top:1px solid var(--bd);margin-top:6px}
@@ -171,7 +160,7 @@ input::placeholder{color:var(--tx3)}
 .tfl span{font-size:.9rem;font-weight:700;color:var(--tx)}
 .tfd{font-size:11px;color:var(--tx3);line-height:1.7;max-width:290px;margin:0 auto}
 
-/* KEY FEATURES */
+/* KEY FEATURES & HISTORY & ANALYTICS & ABOUT & MORE... (Kept as it is) */
 .kft{font-size:.95rem;font-weight:800;text-align:center;padding:14px 0 13px;color:var(--tx)}
 .kfg{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding-bottom:10px}
 .kfc{background:var(--card);border:1px solid var(--bd);border-radius:13px;padding:15px 13px;transition:var(--tr)}
@@ -180,7 +169,6 @@ input::placeholder{color:var(--tx3)}
 .kfn{font-size:11.5px;font-weight:700;margin-bottom:3px}
 .kfd{font-size:10px;color:var(--tx3);line-height:1.55}
 
-/* HISTORY */
 .hi{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:13px;background:var(--inp);border:1px solid var(--bd);margin-bottom:8px;cursor:pointer;transition:var(--tr)}
 .hi:hover{border-color:var(--bdh);transform:translateX(2px)}
 .hii{width:34px;height:34px;border-radius:9px;background:rgba(0,212,255,.08);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--c1);flex-shrink:0}
@@ -190,7 +178,6 @@ input::placeholder{color:var(--tx3)}
 .bclr{width:100%;height:44px;border-radius:11px;border:1.5px solid rgba(255,77,106,.33);background:transparent;color:rgba(255,77,106,.8);font-family:'Poppins',sans-serif;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;transition:var(--tr);margin-top:7px}
 .bclr:hover{background:rgba(255,77,106,.09)}
 
-/* ANALYTICS STATS */
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:13px}
 .sc{background:var(--card);backdrop-filter:blur(22px);border:1px solid var(--bd);border-radius:14px;padding:15px 13px;transition:var(--tr)}
 .sc:hover{border-color:var(--bdh)}
@@ -198,20 +185,16 @@ input::placeholder{color:var(--tx3)}
 .scn{font-size:1.65rem;font-weight:900;line-height:1}
 .scl{font-size:10px;color:var(--tx3);margin-top:4px;font-weight:600}
 
-/* ABOUT */
 .ahh{text-align:center;padding:6px 0 20px}
 .ahh h2{font-size:1.4rem;font-weight:900;line-height:1.28;margin-bottom:8px}
 .ahh p{font-size:12px;color:var(--tx3);line-height:1.65}
 .fc{background:var(--card);border:1px dashed rgba(255,255,255,.09);border-radius:14px;padding:17px 15px;margin-bottom:9px;position:relative;overflow:hidden;transition:var(--tr)}
 .lm .fc{border-color:rgba(0,0,0,.09)}
-.fc::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:20px 20px;pointer-events:none}
-.fc:hover{border-color:rgba(255,255,255,.16)}
 .fci{font-size:1rem;color:var(--tx2);margin-bottom:9px;position:relative;z-index:1}
 .fct{font-size:12.5px;font-weight:700;margin-bottom:5px;position:relative;z-index:1}
 .fcd{font-size:11px;color:var(--tx3);line-height:1.6;position:relative;z-index:1}
 .aft{text-align:center;padding:13px;font-size:10px;color:var(--tx3);border-top:1px solid var(--bd);margin-top:5px}
 
-/* SETTINGS */
 .sr{display:flex;align-items:center;justify-content:space-between;padding:15px 17px;border-radius:12px;background:var(--inp);border:1px solid var(--bd);margin-bottom:8px}
 .sl{display:flex;align-items:center;gap:11px}
 .sl i{color:var(--c1);width:16px;text-align:center}
@@ -225,7 +208,7 @@ input::placeholder{color:var(--tx3)}
 .brst:hover{background:rgba(255,77,106,.13);border-color:rgba(255,77,106,.52)}
 .ver{text-align:center;padding:13px;font-size:10.5px;color:var(--tx3)}
 
-/* BOTTOM NAV */
+/* BOTTOM NAV (Dial Removed) */
 .bnav{position:fixed;bottom:13px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;background:var(--nav);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid var(--bd);border-radius:36px;padding:7px 12px;gap:1px;box-shadow:0 8px 32px rgba(0,0,0,.42);max-width:480px;width:calc(100% - 24px)}
 .ni{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border-radius:22px;cursor:pointer;border:none;background:none;color:var(--tx3);font-family:'Poppins',sans-serif;min-height:44px;position:relative;transition:var(--tr)}
 .ni i{font-size:16px;transition:var(--tr)}
@@ -234,16 +217,18 @@ input::placeholder{color:var(--tx3)}
 .ni:active{transform:scale(.88)}
 .nib{position:absolute;inset:0;border-radius:22px;opacity:0;transition:opacity .2s}
 .ni.on .nib{opacity:1}
-/* per-tab accent colors */
 .ni[data-t=home].on{color:var(--nh)}.ni[data-t=home].on .nib{background:rgba(61,155,255,.1)}
 .ni[data-t=hist].on{color:var(--nhi)}.ni[data-t=hist].on .nib{background:rgba(255,79,160,.1)}
 .ni[data-t=anl].on{color:var(--na)}.ni[data-t=anl].on .nib{background:rgba(155,92,255,.1)}
 .ni[data-t=abt].on{color:var(--nab)}.ni[data-t=abt].on .nib{background:rgba(255,184,48,.08)}
 .ni[data-t=more].on{color:var(--nm)}.ni[data-t=more].on .nib{background:rgba(170,184,208,.07)}
-.ni[data-t=dial].on{color:var(--c2)}.ni[data-t=dial].on .nib{background:rgba(0,232,160,.08)}
 
 ::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
 @media(min-width:480px){.aname{font-size:2.3rem}.tab{padding:28px 20px 18px}}
+
+/* Checkbox Style */
+.cbx-wrap { display:flex; align-items:center; gap:8px; margin-top:10px; font-size:12px; font-weight:600; color:var(--tx3); cursor:pointer; }
+.cbx-wrap input { width:14px; height:14px; accent-color:var(--c1); cursor:pointer; }
 </style>
 </head>
 <body>
@@ -274,21 +259,24 @@ input::placeholder{color:var(--tx3)}
       </div>
       <div class="fh">Your 10-digit mobile number</div>
     </div>
-    <div class="fg">
+    <div class="fg" style="margin-bottom:8px">
       <div class="fl"><i class="fa-solid fa-key"></i> Access Key</div>
       <div class="iw" id="kw">
         <input type="password" id="ki" placeholder="Enter your access key">
         <button class="ib" onclick="toggleEye()"><i class="fa-solid fa-eye" id="eyi"></i></button>
       </div>
-      <div class="fh">Your secure authentication key</div>
+      <!-- SAVE KEY CHECKBOX -->
+      <label class="cbx-wrap">
+        <input type="checkbox" id="remKey"> Save Access Key
+      </label>
     </div>
     <button class="blk" id="lbtn" onclick="doLookup(event)"><i class="fa-solid fa-magnifying-glass"></i> Lookup Information</button>
   </div>
   <div class="lst" id="lstps">
-    <div class="step" id="s1"><div class="sic"><div class="spn"></div></div><span>Checking number...</span></div>
-    <div class="step" id="s2"><div class="sic"><div class="spn"></div></div><span>Verifying access...</span></div>
-    <div class="step" id="s3"><div class="sic"><div class="spn"></div></div><span>Fetching intelligence...</span></div>
-    <div class="step" id="s4"><div class="sic"><div class="spn"></div></div><span>Processing data...</span></div>
+    <div class="step" id="s1"><div class="sic"><div class="spn"></div></div><span>Connecting to Global API...</span></div>
+    <div class="step" id="s2"><div class="sic"><div class="spn"></div></div><span>Verifying authentication...</span></div>
+    <div class="step" id="s3"><div class="sic"><div class="spn"></div></div><span>Fetching live telecom data...</span></div>
+    <div class="step" id="s4"><div class="sic"><div class="spn"></div></div><span>Generating intelligence report...</span></div>
   </div>
   <div class="res gc" id="res">
     <div class="rh"><i class="fa-solid fa-file-shield"></i><h3>Intelligence Report</h3></div>
@@ -384,14 +372,29 @@ input::placeholder{color:var(--tx3)}
   <button class="ni" data-t="anl" onclick="sw('anl',this)"><div class="nib"></div><i class="fa-solid fa-chart-pie"></i><span class="nil">Analytics</span></button>
   <button class="ni" data-t="abt" onclick="sw('abt',this)"><div class="nib"></div><i class="fa-solid fa-circle-info"></i><span class="nil">About</span></button>
   <button class="ni" data-t="more" onclick="sw('more',this)"><div class="nib"></div><i class="fa-solid fa-moon"></i><span class="nil">More</span></button>
-  <button class="ni" data-t="dial" onclick="sw('home',document.querySelector('[data-t=home]'));document.getElementById('pi').focus()"><div class="nib"></div><i class="fa-solid fa-phone"></i><span class="nil">Dial</span></button>
 </nav>
 
 <script>
-console.log('%cPHONEINTEL INDIA v2.0.0 | OSINT Engine Active','color:#00d4ff;font-size:15px;font-weight:900;background:#06080f;padding:8px 16px;border-radius:6px;border-left:4px solid #00e8a0');
+console.log('%cPHONEINTEL INDIA v2.0.0 | API Connected','color:#00d4ff;font-size:15px;font-weight:900;background:#06080f;padding:8px 16px;border-radius:6px;border-left:4px solid #00e8a0');
 
-const AK='Dev90',HK='phoneintel_history',TK='phoneintel_theme';
-let curR=null;
+// App Config Keys
+const AK = 'Dev90'; // Local App Password for user to enter
+const HK = 'phoneintel_history';
+const TK = 'phoneintel_theme';
+const SK = 'phoneintel_saved_key';
+let curR = null;
+
+// Replace this GitHub raw link with your actual link (Instructions given below)
+const GITHUB_CONFIG_URL = 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/api.json';
+
+/* INITIALIZE SAVED KEY */
+document.addEventListener('DOMContentLoaded', () => {
+    const savedKey = localStorage.getItem(SK);
+    if(savedKey){
+        document.getElementById('ki').value = savedKey;
+        document.getElementById('remKey').checked = true;
+    }
+});
 
 /* THEME */
 function initTheme(){applyTh(localStorage.getItem(TK)||'dark')}
@@ -433,20 +436,6 @@ function shk(id){const e=document.getElementById(id);e.classList.remove('shk');v
 /* BEEP */
 function beep(){try{const c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.frequency.value=900;o.type='sine';g.gain.setValueAtTime(.12,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+.33);o.start();o.stop(c.currentTime+.33)}catch(e){}}
 
-/* DEMO DATA */
-const CA={'6':['Jio','5G'],'7':['Airtel','4G'],'8':['Vi','4G'],'9':['Jio','5G'],'70':['Jio','5G'],'72':['Airtel','4G'],'73':['Jio','5G'],'74':['Vi','4G'],'75':['Airtel','4G'],'76':['Jio','5G'],'77':['Vi','4G'],'78':['Airtel','4G'],'79':['Jio','5G'],'80':['Airtel','4G'],'81':['Jio','5G'],'82':['Airtel','4G'],'83':['Vi','4G'],'84':['BSNL','3G'],'85':['Jio','5G'],'86':['Airtel','4G'],'87':['Jio','5G'],'88':['Airtel','4G'],'89':['Vi','4G'],'90':['Jio','5G'],'91':['Airtel','4G'],'92':['Vi','4G'],'93':['Airtel','4G'],'94':['Jio','5G'],'95':['Airtel','4G'],'96':['Vi','4G'],'97':['Jio','5G'],'98':['Airtel','4G'],'99':['Jio','5G']};
-const CI=['Mumbai','Delhi','Bengaluru','Chennai','Kolkata','Hyderabad','Pune','Ahmedabad','Jaipur','Lucknow','Varanasi','Surat','Patna','Bhopal','Indore','Nagpur','Visakhapatnam','Kochi','Chandigarh','Coimbatore'];
-const ST={Mumbai:'Maharashtra',Delhi:'Delhi',Bengaluru:'Karnataka',Chennai:'Tamil Nadu',Kolkata:'West Bengal',Hyderabad:'Telangana',Pune:'Maharashtra',Ahmedabad:'Gujarat',Jaipur:'Rajasthan',Lucknow:'Uttar Pradesh',Varanasi:'Uttar Pradesh',Surat:'Gujarat',Patna:'Bihar',Bhopal:'Madhya Pradesh',Indore:'Madhya Pradesh',Nagpur:'Maharashtra',Visakhapatnam:'Andhra Pradesh',Kochi:'Kerala',Chandigarh:'Punjab',Coimbatore:'Tamil Nadu'};
-const FN=['Arjun','Priya','Rohit','Neha','Vikram','Anita','Suresh','Pooja','Rahul','Kavitha','Amit','Sunita','Deepak','Ritu','Manoj','Asha','Sanjay','Meera','Vijay','Lakshmi'];
-const LN=['Sharma','Patel','Singh','Kumar','Verma','Nair','Reddy','Gupta','Joshi','Rao','Das','Shah','Mehta','Pandey','Mishra','Tiwari','Iyer','Pillai','Bhat','Sinha'];
-function demo(ph){
-  const c=CA[ph.substring(0,2)]||CA[ph[0]]||['Jio','5G'];
-  const city=CI[parseInt(ph.slice(-2))%CI.length];
-  const name=FN[parseInt(ph[4])%FN.length]+' '+LN[parseInt(ph[7])%LN.length];
-  const active=Math.random()<.85,m=Math.floor(Math.random()*1440);
-  return{name,number:'+91 '+ph,location:`${city}, ${ST[city]||'India'}`,carrier:c[0],network:c[1],status:active?'Active':'Inactive',lastSeen:m<60?`${m}m ago`:`${Math.floor(m/60)}h ago`};
-}
-
 /* STEPS */
 function animSteps(cb){
   const ids=['s1','s2','s3','s4'],lp=document.getElementById('lstps');
@@ -461,30 +450,71 @@ function animSteps(cb){
 /* RIPPLE */
 function rpl(btn,e){const r=document.createElement('span');r.className='rr';const rect=btn.getBoundingClientRect();r.style.left=(e.clientX-rect.left-5)+'px';r.style.top=(e.clientY-rect.top-5)+'px';btn.appendChild(r);setTimeout(()=>r.remove(),640)}
 
-/* LOOKUP */
+/* REAL API LOOKUP */
 async function doLookup(e){
-  const btn=document.getElementById('lbtn');rpl(btn,e);
-  const ph=document.getElementById('pi').value.trim(),key=document.getElementById('ki').value.trim();
-  if(!/^\d{10}$/.test(ph)){toast('Enter a valid 10-digit mobile number','er');shk('pw');return}
-  if(key!==AK){toast('Invalid access key','er');shk('kw');return}
-  btn.disabled=true;
-  const r=document.getElementById('res');r.classList.remove('on');r.style.display='none';
+  const btn = document.getElementById('lbtn'); rpl(btn,e);
+  const ph = document.getElementById('pi').value.trim();
+  const key = document.getElementById('ki').value.trim();
+  const remKey = document.getElementById('remKey').checked;
+
+  if(!/^\d{10}$/.test(ph)){toast('Enter a valid 10-digit mobile number','er'); shk('pw'); return;}
+  if(key !== AK){toast('Invalid access key','er'); shk('kw'); return;}
+
+  // Handle Save Key Checkbox
+  if(remKey) localStorage.setItem(SK, key);
+  else localStorage.removeItem(SK);
+
+  btn.disabled = true;
+  const r = document.getElementById('res'); r.classList.remove('on'); r.style.display='none';
+  
   animSteps(async()=>{
-    let d=null;
-    try{const cr=await Promise.race([fetch('https://raw.githubusercontent.com/phoneintel-india/config/main/api-config.json'),new Promise((_,r)=>setTimeout(()=>r(new Error),3e3))]);if(cr.ok){const cfg=await cr.json();if(cfg.api){const ar=await Promise.race([fetch(cfg.api+ph),new Promise((_,r)=>setTimeout(()=>r(new Error),5e3))]);if(ar.ok)d=await ar.json()}}}catch(x){}
-    if(!d)d=demo(ph);curR={...d,phone:ph};rendRes(d);saveH(ph,d);beep();btn.disabled=false;toast('Intelligence report retrieved');
+    try {
+      // Step 1: Fetch secret API URL from GitHub securely
+      const confRes = await fetch(GITHUB_CONFIG_URL);
+      if(!confRes.ok) throw new Error("Could not connect to secure server.");
+      const config = await confRes.json();
+
+      // Step 2: Fetch data from Tabbo API
+      const apiRes = await fetch(config.apiUrl + ph);
+      if(!apiRes.ok) throw new Error("Failed to fetch number data.");
+      const rawData = await apiRes.json();
+
+      // Mapping Tabbo API JSON to UI Variables
+      // (Added fallbacks in case API keys are slightly different)
+      const finalData = {
+          name: rawData.name || rawData.callerName || 'Not Found',
+          phone: ph,
+          location: rawData.location || rawData.circle || rawData.state || 'India',
+          carrier: rawData.carrier || rawData.operator || rawData.telecom || 'Unknown',
+          network: rawData.network || '4G/5G',
+          status: rawData.status || 'Active',
+          lastSeen: rawData.lastSeen || 'Recently'
+      };
+
+      curR = finalData;
+      rendRes(finalData);
+      saveH(ph, finalData);
+      beep();
+      toast('Intelligence report retrieved');
+
+    } catch(err) {
+      console.error(err);
+      toast('Server Error. Please try again.', 'er');
+    } finally {
+      btn.disabled = false;
+    }
   });
 }
 
 /* RENDER RESULT */
 function rendRes(d){
-  const rows=[{ico:'fa-user',l:'Name',v:d.name},{ico:'fa-phone',l:'Number',v:d.number||d.phone},{ico:'fa-location-dot',l:'Location',v:d.location},{ico:'fa-tower-cell',l:'Carrier',v:d.carrier},{ico:'fa-wifi',l:'Network',v:d.network},{ico:'fa-circle-dot',l:'Status',v:d.status,b:true},{ico:'fa-clock',l:'Last Seen',v:d.lastSeen}];
+  const rows=[{ico:'fa-user',l:'Name',v:d.name},{ico:'fa-phone',l:'Number',v:'+91 '+d.phone},{ico:'fa-location-dot',l:'Location',v:d.location},{ico:'fa-tower-cell',l:'Carrier',v:d.carrier},{ico:'fa-wifi',l:'Network',v:d.network},{ico:'fa-circle-dot',l:'Status',v:d.status,b:true},{ico:'fa-clock',l:'Last Seen',v:d.lastSeen}];
   document.getElementById('rrows').innerHTML=rows.map(r=>`<div class="rrow"><div class="rico"><i class="fa-solid ${r.ico}"></i></div><div style="flex:1"><div class="rl">${r.l}</div><div class="rv">${r.b?`<span class="sb ${r.v==='Active'?'son':'soff'}"><i class="fa-solid fa-circle" style="font-size:5px"></i>${r.v}</span>`:r.v}</div></div></div>`).join('');
   const res=document.getElementById('res');res.style.display='block';res.classList.add('on');
 }
 
 /* COPY/SHARE */
-function repTxt(){if(!curR)return'';const d=curR;return`PhoneIntel India — Intelligence Report\n${'─'.repeat(36)}\nName     : ${d.name}\nNumber   : ${d.number||'+91 '+d.phone}\nLocation : ${d.location}\nCarrier  : ${d.carrier}\nNetwork  : ${d.network}\nStatus   : ${d.status}\nLast Seen: ${d.lastSeen}\n${'─'.repeat(36)}\nPowered by OSINT Technology`}
+function repTxt(){if(!curR)return'';const d=curR;return`PhoneIntel India — Intelligence Report\n${'─'.repeat(36)}\nName     : ${d.name}\nNumber   : +91 ${d.phone}\nLocation : ${d.location}\nCarrier  : ${d.carrier}\nNetwork  : ${d.network}\nStatus   : ${d.status}\nLast Seen: ${d.lastSeen}\n${'─'.repeat(36)}\nPowered by OSINT Technology`}
 async function cpRep(){try{await navigator.clipboard.writeText(repTxt());toast('Report copied to clipboard')}catch(e){toast('Copy failed','er')}}
 async function shRep(){if(navigator.share){try{await navigator.share({title:'PhoneIntel Report',text:repTxt()});return}catch(e){}}await cpRep()}
 
@@ -493,7 +523,7 @@ function getH(){try{return JSON.parse(localStorage.getItem(HK)||'[]')}catch(e){r
 function saveH(ph,d){let h=getH().filter(x=>x.phone!==ph);h.unshift({phone:ph,name:d.name,carrier:d.carrier,location:d.location,status:d.status,time:new Date().toISOString()});if(h.length>50)h=h.slice(0,50);localStorage.setItem(HK,JSON.stringify(h))}
 function rendH(){
   const h=getH(),c=document.getElementById('hlist');
-  if(h.length===0){c.innerHTML=`<div class="empty"><div class="ewm"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="eiw"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>No Search History</h3><p>Your search history will appear here after you perform lookups</p><button class="bwh" onclick="sw('home',document.querySelector('[data-t=home]'))"><i class="fa-solid fa-magnifying-glass"></i> Start Lookup</button></div>`;return}
+  if(h.length===0){c.innerHTML=`<div class="empty"><div class="ewm"><i class="fa-solid fa-clock-rotate-left"></i></div><div class="eiw"><i class="fa-solid fa-clock-rotate-left"></i></div><h3>No Search History</h3><p>Your search history will appear here after you perform lookups</p></div>`;return}
   c.innerHTML=h.map(item=>{const t=new Date(item.time);const ts=t.toLocaleDateString('en-IN',{day:'2-digit',month:'short'})+' '+t.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});return`<div class="hi" onclick="rerun('${item.phone}')"><div class="hii"><i class="fa-solid fa-phone"></i></div><div style="flex:1;min-width:0"><div class="hin">+91 ${item.phone}</div><div class="him">${item.carrier} &bull; ${item.location}</div></div><div class="ht">${ts}</div></div>`}).join('')+`<button class="bclr" onclick="clrH()"><i class="fa-solid fa-trash"></i> Clear All History</button>`;
 }
 function clrH(){if(!confirm('Clear all search history?'))return;localStorage.removeItem(HK);rendH();toast('History cleared')}
@@ -502,7 +532,7 @@ function rerun(ph){document.getElementById('pi').value=ph;sw('home',document.que
 /* ANALYTICS */
 function rendA(){
   const h=getH(),c=document.getElementById('anlc');
-  if(h.length===0){c.innerHTML=`<div class="empty"><div class="ewm"><i class="fa-solid fa-chart-pie"></i></div><div class="eiw"><i class="fa-solid fa-chart-pie"></i></div><h3>No Analytics Data</h3><p>Your analytics will appear here after you perform lookups</p><button class="bwh" onclick="sw('home',document.querySelector('[data-t=home]'))"><i class="fa-solid fa-magnifying-glass"></i> Start Lookup</button></div>`;return}
+  if(h.length===0){c.innerHTML=`<div class="empty"><div class="ewm"><i class="fa-solid fa-chart-pie"></i></div><div class="eiw"><i class="fa-solid fa-chart-pie"></i></div><h3>No Analytics Data</h3><p>Your analytics will appear here after you perform lookups</p></div>`;return}
   const carr={};h.forEach(x=>carr[x.carrier]=(carr[x.carrier]||0)+1);
   const top=Object.entries(carr).sort((a,b)=>b[1]-a[1])[0],active=h.filter(x=>x.status==='Active').length,last=h[0];
   const lt=new Date(last.time).toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
@@ -510,13 +540,10 @@ function rendA(){
 }
 
 /* RESET */
-function resetAll(){if(!confirm('Reset all data? This cannot be undone.'))return;localStorage.removeItem(HK);applyTh('dark');document.getElementById('pi').value='';document.getElementById('ki').value='';document.getElementById('lstps').classList.remove('on');const r=document.getElementById('res');r.classList.remove('on');r.style.display='none';toast('All data has been reset')}
+function resetAll(){if(!confirm('Reset all data? This cannot be undone.'))return;localStorage.removeItem(HK);localStorage.removeItem(SK);applyTh('dark');document.getElementById('pi').value='';document.getElementById('ki').value='';document.getElementById('remKey').checked=false;document.getElementById('lstps').classList.remove('on');const r=document.getElementById('res');r.classList.remove('on');r.style.display='none';toast('All data has been reset')}
 
 /* INIT */
 initTheme();
 </script>
-</body>
-</html>
-    <script></script>
 </body>
 </html>
